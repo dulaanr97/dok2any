@@ -1,0 +1,31 @@
+package:
+  name: dok2any
+  version: "1.0"
+
+source:
+  path: ..
+
+build:
+  number: 0
+  script: $PYTHON setup.py install  
+
+requirements:
+  host:
+    - python >=3.9
+    - pip
+  run:
+    - python >=3.9
+    - openbabel
+
+about:
+  home: https://github.com/dulaanr97/dok2any
+  license: MIT
+  license_file: ../LICENSE
+  summary: Convert DOK files to various chemical structure formats using Open Babel.
+  description: |
+    Convert DOK files into various chemical structure formats using Open Babel.
+  doc_url: https://github.com/dulaanr97/dok2any
+
+extra:
+  recipe-maintainers:
+    - dulaanr97

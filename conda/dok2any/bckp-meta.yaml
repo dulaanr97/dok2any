@@ -1,0 +1,44 @@
+{% set name = "dok2any" %}
+{% set version = "0.0.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 861ca8150d935afbcf7574aa814587fa3d70f13f514c46b0f19fb3a2d2415dd2
+
+build:
+  number: 0
+  entry_points:
+    - dok2any = dok2any.converter:main
+  script: "{{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation"
+
+requirements:
+  host:
+    - openbabel
+    - pip
+    - python
+  run:
+    - openbabel
+    - python
+
+test:
+  imports:
+    - dok2any
+  commands:
+    - dok2any --help
+
+about:
+  home: "https://github.com/dulaanr97/dok2any"
+  license: MIT
+  license_family: MIT
+  license_file: 
+  summary: "Convert DOK files to various chemical structure formats using Open Babel."
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here

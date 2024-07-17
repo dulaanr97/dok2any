@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+dok2any/__init__.py
+dok2any/converter.py
+dok2any.egg-info/PKG-INFO
+dok2any.egg-info/SOURCES.txt
+dok2any.egg-info/dependency_links.txt
+dok2any.egg-info/top_level.txt

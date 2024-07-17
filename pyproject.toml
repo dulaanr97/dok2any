@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "dok2any"
+version = "0.0.1"
+authors = [
+  { name = "Dulaj Ramanayaka", email = "dulajnr97git@gmail.com" },
+]
+description = "Convert DOK files to various chemical structure formats using Open Babel."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/dulaanr97/dok2any"
+Issues = "https://github.com/dulaanr97/dok2any/issues"
