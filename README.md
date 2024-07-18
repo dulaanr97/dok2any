@@ -14,6 +14,14 @@
 **dok2any** can be installed using pip:
 
 
-```bash
-pip install dok2any
+<h2>🛠️ Installation Steps:</h2>
 
+<p>1. pip this</p>
+
+```
+pip install dok2any
+```
+
+<h2>🍰 Contribution Guidelines:</h2>
+
+asdaudhuifhsduihdsuhdu
