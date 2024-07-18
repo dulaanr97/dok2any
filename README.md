@@ -4,7 +4,7 @@
 
 <h2>🛠️ Installation Steps:</h2>
 
-<p>1. Install the package using pip:</p>
+<p>Install the package using pip:</p>
 
 <pre><code>pip install dok2any
 </code></pre>
