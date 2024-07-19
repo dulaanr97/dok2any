@@ -33,7 +33,12 @@ arguments:
 
 <h3>Example Usage:</h3>
 
+convert all the DOK files containing in a folder:
 <pre><code>dok2any -idok data/dok_files/ -oformat sdf -odir data/converted_files/
+</code></pre>
+
+convert a single DOK file:
+<pre><code>dok2any -idok data/dok_files/ligand01.dok -oformat mol2 -odir data/converted_files/
 </code></pre>
 
 <p>This command will convert all DOK files in the <code>data/dok_files/</code> folder to SDF format and save the output files in the <code>data/converted_files</code> directory.</p>
