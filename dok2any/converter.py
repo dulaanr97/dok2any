@@ -80,21 +80,7 @@ def process_dok_file(dok_file_path, output_format, output_file_path):
 
     print(f"Converted {dok_file_path} to {output_file_path} successfully!")
 
-def main():
-    parser = argparse.ArgumentParser(description='Convert DOK files to specified output format using Open Babel.')
-    parser.add_argument('-idok', metavar='input_dok_folder', type=str, required=True,
-                        help='Path to the folder containing DOK files')
-    parser.add_argument('-oformat', metavar='output_format', type=str, required=True,
-                        help='Output format for conversion (e.g., mol2, pdb, sdf)')
-    parser.add_argument('-odir', metavar='output_dir', type=str, required=True,
-                        help='Path to the output directory')
-    
-    args = parser.parse_args()
-    
-    input_folder = args.idok
-    output_format = args.oformat.lower()  # Ensure the output format is lowercase
-    output_dir = args.odir
-
+def process_dok_folder(input_folder, output_format, output_dir):
     # Create the output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
     
@@ -104,6 +90,29 @@ def main():
             dok_file_path = os.path.join(input_folder, filename)
             output_file_path = os.path.join(output_dir, filename.replace('.dok', f'.{output_format}'))
             process_dok_file(dok_file_path, output_format, output_file_path)
+
+def main():
+    parser = argparse.ArgumentParser(description='Convert DOK files to specified output format using Open Babel.')
+    parser.add_argument('-idok', metavar='input_dok', type=str, required=True,
+                        help='Path to the folder containing DOK files or a single DOK file')
+    parser.add_argument('-oformat', metavar='output_format', type=str, required=True,
+                        help='Output format for conversion (e.g., mol2, pdb, sdf)')
+    parser.add_argument('-odir', metavar='output_dir', type=str, required=True,
+                        help='Path to the output directory')
+    
+    args = parser.parse_args()
+    
+    input_dok = args.idok
+    output_format = args.oformat.lower()  # Ensure the output format is lowercase
+    output_dir = args.odir
+
+    if os.path.isdir(input_dok):
+        process_dok_folder(input_dok, output_format, output_dir)
+    elif os.path.isfile(input_dok) and input_dok.endswith('.dok'):
+        output_file_path = os.path.join(output_dir, os.path.basename(input_dok).replace('.dok', f'.{output_format}'))
+        process_dok_file(input_dok, output_format, output_file_path)
+    else:
+        print(f"Error: {input_dok} is neither a directory nor a valid DOK file.")
 
 if __name__ == "__main__":
     main()
