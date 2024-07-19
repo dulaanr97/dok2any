@@ -12,8 +12,8 @@
 <h2>Dependencies:</h2>
 
 <ul>
-    <li>Python (>= 3.10)</li>
-    <li>Open Babel (wheel package required)</li>
+    <li>python (>= 3.10)</li>
+    <li>openbabel-wheel</li>
 </ul>
 
 <h2>Usage:</h2>
