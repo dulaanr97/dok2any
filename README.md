@@ -33,7 +33,7 @@ optional arguments:
 
 <h3>Example Usage:</h3>
 
-<pre><code>dok2any -idok /path/to/dok/files -oformat mol2 -odir /path/to/output
+<pre><code>dok2any -idok data/dok_files/ -oformat sdf -odir data/converted_files/
 </code></pre>
 
 <p>This command will convert all DOK files in the <code>/path/to/dok/files</code> folder to MOL2 format and save the output files in the <code>/path/to/output</code> directory.</p>
