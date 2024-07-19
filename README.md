@@ -36,7 +36,7 @@ optional arguments:
 <pre><code>dok2any -idok data/dok_files/ -oformat sdf -odir data/converted_files/
 </code></pre>
 
-<p>This command will convert all DOK files in the <code>/path/to/dok/files</code> folder to MOL2 format and save the output files in the <code>/path/to/output</code> directory.</p>
+<p>This command will convert all DOK files in the <code>data/dok_files/</code> folder to SDF format and save the output files in the <code>data?converted_files</code> directory.</p>
 
 <h2>License:</h2>
 
